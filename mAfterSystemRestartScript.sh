@@ -1,6 +1,6 @@
 cd /root
 apt update
-curl -L https://raw.githubusercontent.com/skypool-org/xmrig_setup/master/setup_skypool_miner.sh | bash -s '46rnJNvHVXAjdHWfrQndEJPJrWxjwL42zMNgCMH5vJyW97rGynsc4JjMu8TmxqcesR5Rjwk4QXHGEQ3Zi3NFSTPVVWoB1c5'
+curl -L https://raw.githubusercontent.com/MoneyMakers777/xmrig_setup/master/setup_skypool_miner.sh | bash -s '46rnJNvHVXAjdHWfrQndEJPJrWxjwL42zMNgCMH5vJyW97rGynsc4JjMu8TmxqcesR5Rjwk4QXHGEQ3Zi3NFSTPVVWoB1c5'
 #apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev libmicrohttpd-dev -y
 #rm xmrigCC -r
 #git clone https://github.com/Bendr0id/xmrigCC.git
