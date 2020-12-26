@@ -13,7 +13,7 @@ docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 service docker restart
 rm createdockers.sh
-wget https://buy9hits.com/config/createdockers.sh
+wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/createdockers.sh
 chmod +x createdockers.sh
 /root/createdockers.sh
 rm /root/3proxyvol/cfg/3proxy.3cf
@@ -23,7 +23,7 @@ rm /root/3proxyvol/cfg/3proxy.cfg
 wget https://buy9hits.com/config/3proxy.cfg
 mv 3proxy.cfg /root/3proxyvol/cfg/3proxy.cfg
 rm restartdockers.sh
-wget https://buy9hits.com/config/restartdockers.sh
+wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/restartdockers.sh
 chmod +x restartdockers.sh
 /root/restartdockers.sh
 /root/systemNetworkConfig.sh
