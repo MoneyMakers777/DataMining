@@ -11,5 +11,6 @@ let hours=hours=$((${upSeconds}/3600))
 #if [ "${hours}" -gt "8" ] && [ $(($RANDOM%3)) == 0 ]
 if [ "${hours}" -gt "2" ] 
 then
-   poweroff
+   #poweroff
+   /sbin/shutdown -P now
 fi
