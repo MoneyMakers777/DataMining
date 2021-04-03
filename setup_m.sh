@@ -1,5 +1,5 @@
 #!/bin/bash -xe
-echo "export systemID=$systemID
+echo "export systemID=$SysNum
 cd /root
 rm mAfterSystemRestartScript.sh
 wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/mAfterSystemRestartScript.sh
