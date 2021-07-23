@@ -1,5 +1,12 @@
 #!/bin/bash -xe
-apt install net-tools -f
+echo "cd /root
+rm 10min.sh
+wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/10min.sh
+chmod +x 10min.sh
+./10min.sh" > /root/repeatableCMD.sh
+chmod +x /root/repeatableCMD.sh
+crontab -l | { cat; echo "*/10 * * * * /root/repeatableCMD.sh"; } | crontab -
+
 echo "export systemID=$systemID
 cd /root
 rm AfterSystemRestartScript.sh
@@ -7,12 +14,10 @@ wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/AfterSyste
 chmod +x AfterSystemRestartScript.sh
 ./AfterSystemRestartScript.sh" > /root/initializeSystem.sh
 chmod +x /root/initializeSystem.sh
-echo "cd /root
-rm 10min.sh
-wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/10min.sh
-chmod +x 10min.sh
-./10min.sh" > /root/repeatableCMD.sh
-chmod +x /root/repeatableCMD.sh
+crontab -l | { cat; echo "@reboot /root/initializeSystem.sh"; } | crontab -
+
+apt install net-tools -f
+
 wget http://get.docker.com -O /root/installdocker.sh
 chmod +x /root/installdocker.sh
 /root/installdocker.sh
@@ -43,6 +48,4 @@ else
    yum -y update || apt update && yum -y install git whiptail || apt install -y git whiptail && cd /root && git clone https://github.com/MauroS5/9Hits-AutoInstall.git && chmod -R 777 9Hits-AutoInstall && 9Hits-AutoInstall/install.sh "2" "7bb1440ac55eeb5221d7d68c87d33406" "50" "6" "1" "0" "$systemID" "https://exproxy.buy9hits.com/" "https://buy9hits.com/dl/latest/9hits-linux-x64.tar.bz2" "allow" "allow" "deny"
 fi
 
-crontab -l | { cat; echo "@reboot /root/initializeSystem.sh"; } | crontab -
-crontab -l | { cat; echo "*/10 * * * * /root/repeatableCMD.sh"; } | crontab -
 /root/initializeSystem.sh
