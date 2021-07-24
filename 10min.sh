@@ -20,6 +20,14 @@ if [ $? -eq 0 ]; then
 else
    /sbin/shutdown -P now
 fi
+elif [ $sys_type == 3 ]
+then
+docker exec docker_2 wget -q --spider http://ipv6.test-ipv6.com/
+if [ $? -eq 0 ]; then
+   /sbin/shutdown -P now
+fi
+else
+docker stop $(docker ps -aq)
 fi
 
 let upSeconds="$(cat /proc/uptime | grep -o '^[0-9]\+')"
