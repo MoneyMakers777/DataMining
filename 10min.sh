@@ -5,14 +5,22 @@
 #if [[ ${usage} -le 60 ]]; then
 #    /sbin/shutdown -r now
 #fi
+FILE=/root/set-vars.sh
+if test -f "$FILE"; then
+    echo "export sys_type=3" > /root/set-vars.sh
+    chmod +x /root/set-vars.sh
+fi
 
+/root/set-vars.sh
+if [ $sys_type == 1 ]
+then
 docker exec docker_2 wget -q --spider http://ipv6.test-ipv6.com/
 if [ $? -eq 0 ]; then
     echo OK
 else
    /sbin/shutdown -P now
 fi
-
+fi
 
 let upSeconds="$(cat /proc/uptime | grep -o '^[0-9]\+')"
 let hours=hours=$((${upSeconds}/3600))
