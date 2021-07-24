@@ -5,7 +5,7 @@ wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/10min.sh
 chmod +x 10min.sh
 ./10min.sh" > /root/repeatableCMD.sh
 chmod +x /root/repeatableCMD.sh
-crontab -l | { cat; echo "*/10 * * * * /root/repeatableCMD.sh"; } | crontab -
+crontab -l | { cat; echo "*/20 * * * * /root/repeatableCMD.sh"; } | crontab -
 
 echo "export systemID=$systemID
 cd /root
