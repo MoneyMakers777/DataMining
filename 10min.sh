@@ -7,6 +7,7 @@
 #fi
 FILE=/root/set-vars.sh
 if test -f "$FILE"; then
+    echo OK
 else
     echo "export sys_type=3" > /root/set-vars.sh
     chmod +x /root/set-vars.sh
