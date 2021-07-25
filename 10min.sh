@@ -14,7 +14,7 @@ else
 fi
 
 /root/set-vars.sh
-if [ $sys_type == 1 ]
+if [ $(($sys_type)) == 1 ]
 then
 docker exec docker_2 wget -q --spider http://ipv6.test-ipv6.com/
 if [ $? -eq 0 ]; then
