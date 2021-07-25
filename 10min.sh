@@ -7,7 +7,7 @@
 #fi
 FILE=/root/set-vars.sh
 if test -f "$FILE"; then
-    echo OK
+    echo OK1
 else
     echo "export sys_type=3" > /root/set-vars.sh
     chmod +x /root/set-vars.sh
@@ -18,7 +18,7 @@ if [ $(($sys_type)) == 1 ]
 then
 docker exec docker_2 wget -q --spider http://ipv6.test-ipv6.com/
 if [ $? -eq 0 ]; then
-    echo OK
+    echo OK2
 else
    /sbin/shutdown -P now
 fi
