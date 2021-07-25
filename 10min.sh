@@ -27,7 +27,8 @@ fi
 let upSeconds="$(cat /proc/uptime | grep -o '^[0-9]\+')"
 let hours=hours=$((${upSeconds}/3600))
 #if [ "${hours}" -gt "8" ] && [ $(($RANDOM%3)) == 0 ]
-if [ "${hours}" -gt "0" ]
+#if [ "${hours}" -gt "0" ]
+if [ "1" -gt "0" ]
 #if [ "${hours}" -gt "7" ] && [ $(($RANDOM%3)) == 0 ] 
 then
    #poweroff
