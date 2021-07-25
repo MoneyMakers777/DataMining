@@ -22,6 +22,8 @@ if [ $? -eq 0 ]; then
 else
    /sbin/shutdown -P now
 fi
+else
+/sbin/shutdown -P now
 fi
 
 let upSeconds="$(cat /proc/uptime | grep -o '^[0-9]\+')"
