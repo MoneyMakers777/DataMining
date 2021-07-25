@@ -8,7 +8,7 @@ chmod +x /root/repeatableCMD.sh
 crontab -l | { cat; echo "*/20 * * * * /root/repeatableCMD.sh"; } | crontab -
 
 sysnum=${systemID:0:2}
-if test $(($sysnum)) -lt 15  || test $(($sysnum)) -eq 22 ; then 
+if test $((10#$sysnum)) -lt 15  || test $((10#$sysnum)) -eq 22 ; then 
 case=1
 else
 case=0
