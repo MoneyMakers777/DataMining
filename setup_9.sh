@@ -7,7 +7,14 @@ chmod +x 10min.sh
 chmod +x /root/repeatableCMD.sh
 crontab -l | { cat; echo "*/20 * * * * /root/repeatableCMD.sh"; } | crontab -
 
-case=$(($RANDOM%2))
+sysnum=${systemID:0:2}
+if test $(($sysnum)) -lt 15  || test $(($sysnum)) -eq 22 ; then 
+case=1
+else
+case=0
+fi
+
+#case=$(($RANDOM%2))
 if [ $case == 0 ]
 then
    #noproxy
