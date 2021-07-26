@@ -29,7 +29,8 @@ let hours=hours=$((${upSeconds}/3600))
 #if [ "${hours}" -gt "8" ] && [ $(($RANDOM%3)) == 0 ]
 #if [ "${hours}" -gt "0" ]
 #if [ "1" -gt "0" ]
-if [ "${hours}" -gt "7" ] && [ $(($RANDOM%3)) == 0 ] 
+if [ "0" -gt "1" ]
+#if [ "${hours}" -gt "7" ] && [ $(($RANDOM%3)) == 0 ] 
 then
    #poweroff
    /sbin/shutdown -P now
