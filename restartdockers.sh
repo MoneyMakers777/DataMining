@@ -33,37 +33,37 @@ docker restart  docker_1f
 
 
 docker restart  docker_20
-#docker restart  docker_21
-#docker restart  docker_22
-#docker restart  docker_23
-#docker restart  docker_24
-#docker restart  docker_25
-#docker restart  docker_26
-#docker restart  docker_27
-#docker restart  docker_28
-#docker restart  docker_29
-#docker restart  docker_2a
-#docker restart  docker_2b
-#docker restart  docker_2c
-#docker restart  docker_2d
-#docker restart  docker_2e
-#docker restart  docker_2f
+docker restart  docker_21
+docker restart  docker_22
+docker restart  docker_23
+docker restart  docker_24
+docker restart  docker_25
+docker restart  docker_26
+docker restart  docker_27
+docker restart  docker_28
+docker restart  docker_29
+docker restart  docker_2a
+docker restart  docker_2b
+docker restart  docker_2c
+docker restart  docker_2d
+docker restart  docker_2e
+docker restart  docker_2f
 
 
-#docker restart  docker_30
-#docker restart  docker_31
-#docker restart  docker_32
-#docker restart  docker_33
-#docker restart  docker_34
-#docker restart  docker_35
-#docker restart  docker_36
-#docker restart  docker_37
-#docker restart  docker_38
-#docker restart  docker_39
-#docker restart  docker_3a
-#docker restart  docker_3b
-#docker restart  docker_3c
-#docker restart  docker_3d
+docker restart  docker_30
+docker restart  docker_31
+docker restart  docker_32
+docker restart  docker_33
+docker restart  docker_34
+docker restart  docker_35
+docker restart  docker_36
+docker restart  docker_37
+docker restart  docker_38
+docker restart  docker_39
+docker restart  docker_3a
+docker restart  docker_3b
+docker restart  docker_3c
+docker restart  docker_3d
 #docker restart  docker_3e
 #docker restart  docker_3f
 
