@@ -1,10 +1,5 @@
 #!/bin/bash
-cores=$(nproc)
-load=$(awk '{print $1}'< /proc/loadavg)
-usage=$(echo | awk -v c="${cores}" -v l="${load}" '{print l*100/c}' | awk -F. '{print $1}')
-if [[ ${usage} -le 60 ]]; then
-    /sbin/shutdown -r now
-fi
+
 FILE=/root/set-vars.sh
 if test -f "$FILE"; then
     echo OK1
@@ -22,6 +17,14 @@ if [ $? -eq 0 ]; then
 else
    /sbin/shutdown -P now
 fi
+
+cores=$(nproc)
+load=$(awk '{print $1}'< /proc/loadavg)
+usage=$(echo | awk -v c="${cores}" -v l="${load}" '{print l*100/c}' | awk -F. '{print $1}')
+if [[ ${usage} -le 60 ]]; then
+    /sbin/shutdown -r now
+fi
+
 fi
 
 let upSeconds="$(cat /proc/uptime | grep -o '^[0-9]\+')"
