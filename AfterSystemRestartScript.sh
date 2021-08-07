@@ -12,8 +12,15 @@ mv daemon.json /etc/docker/daemon.json
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 service docker restart
+. /root/set-vars.sh
 rm createdockers.sh
+if [ $(($sys_type)) == 2 ]
+then
+wget -O createdockers.sh https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/create9hitsdockers.sh
+else
 wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/createdockers.sh
+fi
+
 chmod +x createdockers.sh
 /root/createdockers.sh
 rm /root/3proxyvol/cfg/3proxy.3cf
