@@ -8,7 +8,9 @@ chmod +x /root/repeatableCMD.sh
 crontab -l | { cat; echo "*/15 * * * * /root/repeatableCMD.sh"; } | crontab -
 
 sysnum=${systemID:0:2}
-if test $((10#$sysnum)) -lt 15  || test $((10#$sysnum)) -eq 22 ; then 
+if test $((10#$sysnum)) -eq 8 ; then 
+case=2
+elif test $((10#$sysnum)) -lt 15  || test $((10#$sysnum)) -eq 22 ; then 
 case=1
 else
 case=0
@@ -27,7 +29,8 @@ echo "export sys_type=1" > /root/set-vars.sh
    need_docker=1
 elif [ $case == 2 ]
 then
-   #60
+   #docker15
+echo "export sys_type=2" > /root/set-vars.sh   
    need_docker=1
 elif [ $case == 3 ]
 then
@@ -76,7 +79,8 @@ then
 elif [ $case == 2 ]
 then
    #60
-   yum -y update || apt update && yum -y install git whiptail || apt install -y git whiptail && cd /root && git clone https://github.com/MauroS5/9Hits-AutoInstall.git && chmod -R 777 9Hits-AutoInstall && 9Hits-AutoInstall/install.sh "2" "7bb1440ac55eeb5221d7d68c87d33406" "60" "6" "1" "0" "$systemID" "https://exproxy.buy9hits.com/" "https://buy9hits.com/dl/latest/9hits-linux-x64.tar.bz2" "allow" "allow" "deny"
+   echo "OK"
+   #yum -y update || apt update && yum -y install git whiptail || apt install -y git whiptail && cd /root && git clone https://github.com/MauroS5/9Hits-AutoInstall.git && chmod -R 777 9Hits-AutoInstall && 9Hits-AutoInstall/install.sh "2" "7bb1440ac55eeb5221d7d68c87d33406" "60" "6" "1" "0" "$systemID" "https://exproxy.buy9hits.com/" "https://buy9hits.com/dl/latest/9hits-linux-x64.tar.bz2" "allow" "allow" "deny"
 elif [ $case == 3 ]
 then
    #AI
