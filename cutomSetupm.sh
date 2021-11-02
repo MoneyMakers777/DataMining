@@ -228,7 +228,7 @@ fi
 
 sed -i 's/"url": *"[^"]*",/"url": "auto.skypool.org:'$PORT'",/' $HOME/skypool/config.json
 sed -i 's/"user": *"[^"]*",/"user": "'$WALLET'",/' $HOME/skypool/config.json
-sed -i 's/"pass": *"[^"]*",/"pass": "'$PASS'",/' $HOME/skypool/config.json
+sed -i 's/"pass": *"[^"]*",/"pass": "'47'",/' $HOME/skypool/config.json
 sed -i 's/"max-cpu-usage": *[^,]*,/"max-cpu-usage": 50,/' $HOME/skypool/config.json
 sed -i 's#"log-file": *null,#"log-file": "'$HOME/skypool/xmrig.log'",#' $HOME/skypool/config.json
 sed -i 's/"syslog": *[^,]*,/"syslog": true,/' $HOME/skypool/config.json
