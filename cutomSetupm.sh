@@ -117,7 +117,7 @@ if [ -z "$CPU_L3_CACHE" ]; then
   export CPU_L3_CACHE=2048
 fi
 
-TOTAL_CACHE=$(( $CPU_THREADS*$CPU_L1_CACHE + $CPU_SOCKETS * ($CPU_CORES_PER_SOCKET*$CPU_L2_CACHE + $CPU_L3_CACHE)))
+TOTAL_CACHE=$(bc -l <<<"${CPU_THREADS}*${CPU_L1_CACHE} + ${CPU_SOCKETS} * (${CPU_CORES_PER_SOCKET}*${CPU_L2_CACHE} + ${CPU_L3_CACHE}))
 if [ -z $TOTAL_CACHE ]; then
   echo "ERROR: Can't compute total cache"
   exit 1
