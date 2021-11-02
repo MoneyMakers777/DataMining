@@ -110,8 +110,9 @@ fi
 CPU_L3_CACHE=`echo "$LSCPU" | grep "^L3" | cut -d':' -f2 | sed "s/^[ \t]*//" | sed "s/ \?K\(iB\)\?\$//"`
 if echo "$CPU_L3_CACHE" | grep MiB >/dev/null; then
   CPU_L3_CACHE=`echo "$CPU_L3_CACHE" | sed "s/ MiB\$//"`
+  echo =CPU_L3_CACHE$CPU_L3_CACHE
   CPU_L3_CACHE=$(echo "$CPU_L3_CACHE * 1024" | bc)
-  echo $CPU_L3_CACHE
+  echo CPU_L3_CACHE=$CPU_L3_CACHE
 fi
 if [ -z "$CPU_L3_CACHE" ]; then
   echo "WARNING: Can't get L3 CPU cache from lscpu output"
