@@ -110,9 +110,8 @@ fi
 CPU_L3_CACHE=`echo "$LSCPU" | grep "^L3" | cut -d':' -f2 | sed "s/^[ \t]*//" | sed "s/ \?K\(iB\)\?\$//"`
 if echo "$CPU_L3_CACHE" | grep MiB >/dev/null; then
   CPU_L3_CACHE=`echo "$CPU_L3_CACHE" | sed "s/ MiB\$//"`
-  echo =CPU_L3_CACHE$CPU_L3_CACHE
   CPU_L3_CACHE=$(echo "$CPU_L3_CACHE * 1024" | bc)
-  echo CPU_L3_CACHE=$CPU_L3_CACHE
+  CPU_L3_CACHE=${CPU_L3_CACHE%.*}
 fi
 if [ -z "$CPU_L3_CACHE" ]; then
   echo "WARNING: Can't get L3 CPU cache from lscpu output"
@@ -120,12 +119,13 @@ if [ -z "$CPU_L3_CACHE" ]; then
 fi
 
 TOTAL_CACHE=$(bc -l <<<"$CPU_THREADS * $CPU_L1_CACHE + $CPU_SOCKETS * ($CPU_CORES_PER_SOCKET * $CPU_L2_CACHE + $CPU_L3_CACHE)")
-echo $TOTAL_CACHE
+TOTAL_CACHE=${TOTAL_CACHE%.*}
 if [ -z $TOTAL_CACHE ]; then
   echo "ERROR: Can't compute total cache"
   exit 1
 fi
 EXP_MONERO_HASHRATE=$(( ($CPU_THREADS < $TOTAL_CACHE / 2048 ? $CPU_THREADS : $TOTAL_CACHE / 2048) * ($CPU_MHZ * 20 / 1000) * 5 ))
+CPU_L3_CACHE=$(echo "$CPU_L3_CACHE * 1024" | bc)
 if [ -z $EXP_MONERO_HASHRATE ]; then
   echo "ERROR: Can't compute projected Monero CN hashrate"
   exit 1
