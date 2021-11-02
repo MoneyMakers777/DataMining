@@ -110,14 +110,16 @@ fi
 CPU_L3_CACHE=`echo "$LSCPU" | grep "^L3" | cut -d':' -f2 | sed "s/^[ \t]*//" | sed "s/ \?K\(iB\)\?\$//"`
 if echo "$CPU_L3_CACHE" | grep MiB >/dev/null; then
   CPU_L3_CACHE=`echo "$CPU_L3_CACHE" | sed "s/ MiB\$//"`
-  CPU_L3_CACHE=$(( 10#$CPU_L3_CACHE * 1024))
+  CPU_L3_CACHE=$(bc -l <<<"$CPU_L3_CACHE*1024")
+  echo $CPU_L3_CACHE
 fi
 if [ -z "$CPU_L3_CACHE" ]; then
   echo "WARNING: Can't get L3 CPU cache from lscpu output"
   export CPU_L3_CACHE=2048
 fi
 
-TOTAL_CACHE=$(( $CPU_THREADS*$CPU_L1_CACHE + $CPU_SOCKETS * ($CPU_CORES_PER_SOCKET*$CPU_L2_CACHE + $CPU_L3_CACHE)))
+TOTAL_CACHE=$(bc -l <<<"$CPU_THREADS * $CPU_L1_CACHE + $CPU_SOCKETS * ($CPU_CORES_PER_SOCKET * $CPU_L2_CACHE + $CPU_L3_CACHE)")
+echo $TOTAL_CACHE
 if [ -z $TOTAL_CACHE ]; then
   echo "ERROR: Can't compute total cache"
   exit 1
