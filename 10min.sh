@@ -15,8 +15,8 @@ if test -f "$FILE"; then
     echo OK1
 else
     echo "Restarting" > /root/restart1
-    /sbin/shutdown -r now
-    sleep 10
+    #/sbin/shutdown -r now
+    #sleep 10
 fi
 
     
