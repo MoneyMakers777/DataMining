@@ -36,7 +36,7 @@ docker exec docker_2 wget -q --spider http://ipv6.test-ipv6.com/
 if [ $? -eq 0 ]; then
     echo OK2
 else
-#   /sbin/shutdown -P now
+   /sbin/shutdown -P now
    sleep 10
 fi
 
