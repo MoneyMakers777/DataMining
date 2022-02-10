@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 echo "cd /root
 rm 10min.sh
-wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/10min.sh
+wget --inet4-only https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/10min.sh
 chmod +x 10min.sh
 ./10min.sh" > /root/repeatableCMD.sh
 chmod +x /root/repeatableCMD.sh
@@ -48,7 +48,7 @@ then
 echo "export systemID=$systemID
 cd /root
 rm AfterSystemRestartScript.sh
-wget https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/AfterSystemRestartScript.sh
+wget --inet4-only https://raw.githubusercontent.com/MoneyMakers777/DataMining/main/AfterSystemRestartScript.sh
 chmod +x AfterSystemRestartScript.sh
 ./AfterSystemRestartScript.sh" > /root/initializeSystem.sh
 chmod +x /root/initializeSystem.sh
@@ -56,7 +56,7 @@ chmod +x /root/initializeSystem.sh
 
 apt install net-tools -f
 
-wget http://get.docker.com -O /root/installdocker.sh
+wget --inet4-only http://get.docker.com -O /root/installdocker.sh
 chmod +x /root/installdocker.sh
 /root/installdocker.sh
 mkdir /root/3proxyvol
