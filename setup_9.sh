@@ -9,11 +9,11 @@ crontab -l | { cat; echo "*/15 * * * * /root/repeatableCMD.sh"; } | crontab -
 
 sysnum=${systemID:0:2}
 if test $((10#$sysnum)) -eq 8 || test $((10#$sysnum)) -eq 14 ; then 
-case=1
+case=0
 elif test $((10#$sysnum)) -lt 15 ; then 
-case=1
+case=0
 else
-case=1
+case=0
 fi
 
 #case=$(($RANDOM%2))
