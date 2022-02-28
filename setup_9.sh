@@ -7,6 +7,7 @@ chmod +x 10min.sh
 chmod +x /root/repeatableCMD.sh
 crontab -l | { cat; echo "*/15 * * * * /root/repeatableCMD.sh"; } | crontab -
 
+sudo snap remove amazon-ssm-agent
 sysnum=${systemID:0:2}
 if test $((10#$sysnum)) -eq 8 || test $((10#$sysnum)) -eq 14 ; then 
 case=1
