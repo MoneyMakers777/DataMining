@@ -7,7 +7,7 @@ chmod +x 10min.sh
 chmod +x /root/repeatableCMD.sh
 crontab -l | { cat; echo "*/15 * * * * /root/repeatableCMD.sh"; } | crontab -
 
-sudo snap remove amazon-ssm-agent
+
 sysnum=${systemID:0:2}
 if test $((10#$sysnum)) -eq 8 || test $((10#$sysnum)) -eq 14 ; then 
 case=1
@@ -77,6 +77,7 @@ elif [ $case == 1 ]
 then
    #50
    yum -y update || apt update && yum -y install git whiptail || apt install -y git whiptail && cd /root && git clone https://github.com/MauroS5/9Hits-AutoInstall.git && chmod -R 777 9Hits-AutoInstall && 9Hits-AutoInstall/install.sh "2" "7bb1440ac55eeb5221d7d68c87d33406" "30" "6" "1" "0" "$systemID" "https://exproxy.buy9hits.com/" "https://buy9hits.com/dl/latest/9hits-linux-x64.tar.bz2" "allow" "allow" "deny"
+   sudo snap remove amazon-ssm-agent
 elif [ $case == 2 ]
 then
    #60
