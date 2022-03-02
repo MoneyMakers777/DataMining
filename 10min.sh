@@ -36,7 +36,7 @@ docker exec docker_2 wget -q --spider http://ipv6.test-ipv6.com/
 if [ $? -eq 0 ]; then
     echo OK2
 else
-   /sbin/shutdown -P now
+   #/sbin/shutdown -P now
    #wget --inet4-only https://api.buy9hits.com/api/devices/$systemID/DisableDeviceConfige -O systemNetworkConfig.sh
    #/sbin/shutdown -r now
    sleep 10
