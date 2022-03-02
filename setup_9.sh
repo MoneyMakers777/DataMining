@@ -21,17 +21,20 @@ fi
 if [ $case == 0 ]
 then
    #noproxy
-echo "export sys_type=0" > /root/set-vars.sh
+echo "export sys_type=0
+export systemID=$systemID" > /root/set-vars.sh
    need_docker=0
 elif [ $case == 1 ]
 then
    #20
-echo "export sys_type=1" > /root/set-vars.sh
+echo "export sys_type=1
+export systemID=$systemID" > /root/set-vars.sh
    need_docker=1
 elif [ $case == 2 ]
 then
    #docker15
-echo "export sys_type=2" > /root/set-vars.sh   
+echo "export sys_type=2
+export systemID=$systemID" > /root/set-vars.sh   
    need_docker=1
 elif [ $case == 3 ]
 then
