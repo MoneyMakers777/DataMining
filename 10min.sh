@@ -37,7 +37,7 @@ if [ $? -eq 0 ]; then
     echo OK2
 else
    #/sbin/shutdown -P now
-   wget --inet4-only https://api.buy9hits.com/api/devices/$systemID/DisableDeviceConfige -O systemNetworkConfig.sh
+   #wget --inet4-only https://api.buy9hits.com/api/devices/$systemID/DisableDeviceConfige -O systemNetworkConfig.sh
    /sbin/shutdown -r now
    sleep 10
 fi
