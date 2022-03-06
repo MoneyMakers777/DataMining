@@ -18,11 +18,11 @@ else
     #/sbin/shutdown -r now
     #sleep 10
 fi
-FILE=/root/change2Miner
+FILE=/root/change2Miner2
 if test -f "$FILE"; then
     echo OK1
 else
-    echo "change2Miner" > /root/change2Miner
+    echo "change2Miner2" > /root/change2Miner2
     mv 9Hits 9Old
     killall 9Hits
     cd /root
